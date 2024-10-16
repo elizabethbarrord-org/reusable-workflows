@@ -12,7 +12,10 @@
 name: "CodeQL"
 
 on:
-  workflow_call:
+  push:
+    branches: [ $default-branch, $protected-branches ]
+  pull_request:
+    branches: [ $default-branch, $protected-branches ]
 
 jobs:
   analyze:
